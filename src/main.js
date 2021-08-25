@@ -1,3 +1,3 @@
 const a = 13;
 
-a = 9
+export default a;
