@@ -13,6 +13,7 @@
   },
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "prepush": "yarn lint"
+    "prepush": "yarn lint",
+    "prepare": "husky install"
   }
 }
