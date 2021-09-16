@@ -15,14 +15,16 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.24.2",
     "husky": "^7.0.2",
-    "mocha": "^9.1.0"
+    "mocha": "^9.1.0",
+    "nyc": "^15.1.0"
   },
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "yarn lint",
     "prepare": "husky install",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
-    "test:tdd": "npm test"
+    "test:tdd": "npm test",
+    "test:coverage": "nyc npm run test"
   },
   "dependencies": {
     "core-js": "^3.17.3",
