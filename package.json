@@ -20,11 +20,16 @@
   },
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "prepush": "yarn lint",
+    "prepush": "yarn lint && yarn test:coverage ",
     "prepare": "husky install",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
-    "test:tdd": "npm test",
-    "test:coverage": "nyc npm run test"
+    "test:tdd": "yarn test",
+    "test:coverage": "nyc yarn test"
+  },
+  "nyc": {
+    "functions": 80,
+    "lines": 80,
+    "check-coverage": true
   },
   "dependencies": {
     "core-js": "^3.17.3",
