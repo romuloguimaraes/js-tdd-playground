@@ -6,6 +6,10 @@
   "author": "Rômulo de F. G. <romulo_fantomaz@hotmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/register": "^7.15.3",
     "chai": "^4.3.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -17,7 +21,11 @@
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "yarn lint",
     "prepare": "husky install",
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
     "test:tdd": "npm test"
+  },
+  "dependencies": {
+    "core-js": "^3.17.3",
+    "regenerator-runtime": "^0.13.9"
   }
 }
